@@ -1,4 +1,3 @@
-// Import necessary modules
 require('dotenv').config()
 const express = require('express');
 const path = require('path');
@@ -16,7 +15,7 @@ const file_manager = require('./file_manager');
 
 // Create an app and specify port
 const app = express();
-const port = 3000;
+const port = 80;
 
 // Set up the session middleware
 app.use(session({
