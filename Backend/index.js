@@ -24,11 +24,11 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-// Express 4.6+ doesn't require body-parser middleware
+
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"))
 
-//--------------------------------/  USER LOGIN ENDPOINTS   /--------------------------------//
+
 // API endpoint for user registration
 app.post('/register', async (req, res) => {
     const { username, email, password } = req.body;
@@ -118,9 +118,8 @@ app.get('/delete/:username', async (req, res) => {
     }
 })
 
-//--------------------------------/  S3 UPLOADING ENDPOINTS   /--------------------------------//
-
-const bucket = 'fm-bucket';
+//s3
+const bucket = 'myfccproject';
 const region = 'ap-southeast-2';
 const accessKeyId = process.env.AWS_ACCESS_KEY_ID;
 const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
@@ -307,7 +306,7 @@ app.get('/list', async (req, res) => {
     res.send(response);
 })
 
-//--------------------------------/  FILE MANAGEMENT ENDPOINTS   /--------------------------------//
+
 
 // API endpoint for deleting files (s3.deleteObject)
 app.post('/filedel', async (req, res) => {
