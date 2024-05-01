@@ -1,10 +1,6 @@
-
-////////////////////////    METHODS FOR USER LOG IN / SIGN IN   //////////////////////////////
-// client/or pool of clients is already defined in db_in
+//user log in
 const bcrypt = require('bcrypt');
 const client = require('./db_init');
-
-// I assume client is already connected here ????
 
 /**
  * Register a new user
