@@ -1,7 +1,7 @@
 const pkg = require("pg");
 const { Client } = pkg;
 
-// ENTER YOUR VALUES HERE
+
 const client = new Client({
   host: 'localhost',
   user: 'postgres',
@@ -19,10 +19,7 @@ module.exports = client;
 //   client.end();
 // });
 
-/**
- * Initializing tables - users, folders and files in your provided database.
- * NOTE - run this function only once for table creation
- */
+//intializing the tables
 async function initialize_tables() {
   try {
     client.connect();
@@ -75,7 +72,6 @@ async function initialize_tables() {
     }
 }
 
-// Check if all 3 tables have been connected ? otherwise connnect them
 initialize_tables();
 
 // client.end();
